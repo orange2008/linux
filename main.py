@@ -14,7 +14,7 @@ os.system("wget --no-check-certificate " + xz)
 os.system("tar -xvf *.tar.xz")
 xzname = os.listdir()[0]
 ver = xzname.replace("linux-", "").replace(".tar.xz", "")
-os.chdir(xzname)
+os.chdir(xzname.replace(".tar.xz", ""))
 f = open("Makefile", "r+")
 flist = f.readlines()
 if "EXTRAVERSION" in flist[4]:
